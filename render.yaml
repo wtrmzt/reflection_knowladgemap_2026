@@ -1,7 +1,7 @@
 # render.yaml
 services:
   - type: web
-    name: knowledge-map-backend
+    name: knowledge-map-backend_2026
     env: python
     buildCommand: "cd backend && pip install -r requirements.txt"
     startCommand: "cd backend && gunicorn app:app"
@@ -14,7 +14,7 @@ services:
         sync: false # Renderダッシュボードから手動入力
 
   - type: web
-    name: knowledge-map-frontend
+    name: knowledge-map-frontend_2026
     env: static
     buildCommand: "cd frontend && npm install && npm run build"
     staticPublishPath: "./frontend/dist"
@@ -26,7 +26,7 @@ services:
           envVarKey: RENDER_EXTERNAL_URL
 
 databases:
-  - name: knowledge-map-db
+  - name: knowledge-map-db_2026
     databaseName: knowledgemap
     user: admin
     plan: free
